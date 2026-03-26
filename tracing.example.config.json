@@ -1,0 +1,15 @@
+{
+  "$schema": "./scheme.json",
+  "language": "zh-CN",
+  "targets": [
+    {
+      "strategy": "version",
+      "name": "Example: Version tracking",
+      "versionUrl": "https://example.com/version.json",
+      "versionSource": "json",
+      "versionField": "version",
+      "basicVersion": "1.2.3"
+    }
+  ]
+}
+

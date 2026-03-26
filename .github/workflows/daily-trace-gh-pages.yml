@@ -1,0 +1,48 @@
+# Daily tracing report → gh-pages (accumulates `dist/<yyyy-mm-dd>/` across runs).
+
+name: Daily trace to gh-pages
+
+on:
+  schedule:
+    # 北京时间每天 06:00（Asia/Shanghai, UTC+8）≈ UTC 前一自然日 22:00
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages-trace
+  cancel-in-progress: false
+
+jobs:
+  trace-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate reports
+        run: pnpm trace
+
+      - name: Deploy dist to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          keep_files: true

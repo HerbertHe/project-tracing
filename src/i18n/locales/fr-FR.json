@@ -1,0 +1,46 @@
+{
+  "report.titlePrefix": "Rapport de suivi quotidien",
+  "heading.overview": "Résumé",
+  "heading.details": "Détails",
+  "text.noTargets": "Aucune cible à suivre",
+
+  "table.item": "Élément",
+  "table.content": "Contenu",
+
+  "labels.generatedTime": "Heure de génération",
+  "labels.timeZone": "Fuseau horaire",
+  "labels.entryCount": "Nombre d'éléments",
+
+  "labels.strategy": "Stratégie",
+
+  "common.yes": "Oui",
+  "common.no": "Non",
+  "labels.error": "Erreur",
+
+  "strategy.versionSubscription": "Abonnement de version",
+  "version.subscriptionUrl": "URL d'abonnement",
+  "version.baselineVersion": "Version de référence",
+  "version.remoteVersion": "Version distante",
+  "version.compareResult": "Résultat de la comparaison",
+  "version.updateHigher": "Mise à jour (plus élevée que la référence)",
+  "version.compare.higher": "Plus élevée que la référence",
+  "version.compare.lower": "Plus faible que la référence",
+  "version.compare.same": "Identique à la référence",
+  "title.versionTracking": "Suivi des versions",
+  "title.versionWithNameSuffix": " (Version)",
+
+  "strategy.gitTracking": "Suivi Git",
+  "git.repo": "Dépôt",
+  "git.branch": "Branche",
+  "git.baselineCommit": "Commit de référence",
+  "git.currentHead": "HEAD actuel",
+  "git.hasNewCommits": "Nouveaux commits ?",
+  "git.newCommitsCount": "Nombre de nouveaux commits",
+  "git.commitListTitle": "Liste des commits",
+
+  "title.gitTracking": "Suivi Git",
+  "title.gitWithNameSuffix": " (Git)",
+
+  "table.hash": "Hash",
+  "table.description": "Description"
+}

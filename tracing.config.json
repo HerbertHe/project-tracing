@@ -1,0 +1,14 @@
+{
+  "$schema": "./scheme.json",
+  "language": "zh-CN",
+  "targets": [
+    {
+      "strategy": "version",
+      "name": "SkillHub Cli 更新追踪",
+      "versionUrl": "https://skillhub-1388575217.cos.ap-guangzhou.myqcloud.com/version.json",
+      "versionSource": "json",
+      "versionField": "version",
+      "basicVersion": "2026.3.18"
+    }
+  ]
+}

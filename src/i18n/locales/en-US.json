@@ -1,0 +1,46 @@
+{
+  "report.titlePrefix": "Tracking Daily Report",
+  "heading.overview": "Summary",
+  "heading.details": "Details",
+  "text.noTargets": "No tracing targets",
+
+  "table.item": "Item",
+  "table.content": "Content",
+
+  "labels.generatedTime": "Generated time",
+  "labels.timeZone": "Time zone",
+  "labels.entryCount": "Item count",
+
+  "labels.strategy": "Strategy",
+
+  "common.yes": "Yes",
+  "common.no": "No",
+  "labels.error": "Error",
+
+  "strategy.versionSubscription": "Version subscription",
+  "version.subscriptionUrl": "Subscription URL",
+  "version.baselineVersion": "Baseline version",
+  "version.remoteVersion": "Remote version",
+  "version.compareResult": "Comparison result",
+  "version.updateHigher": "Has update (higher than baseline)",
+  "version.compare.higher": "Higher than baseline",
+  "version.compare.lower": "Lower than baseline",
+  "version.compare.same": "Same as baseline",
+  "title.versionTracking": "Version tracking",
+  "title.versionWithNameSuffix": " (Version)",
+
+  "strategy.gitTracking": "Git tracking",
+  "git.repo": "Repository",
+  "git.branch": "Branch",
+  "git.baselineCommit": "Baseline commit",
+  "git.currentHead": "Current HEAD",
+  "git.hasNewCommits": "Has new commits",
+  "git.newCommitsCount": "New commits count",
+  "git.commitListTitle": "Commit list",
+
+  "title.gitTracking": "Git tracking",
+  "title.gitWithNameSuffix": " (Git)",
+
+  "table.hash": "Hash",
+  "table.description": "Description"
+}

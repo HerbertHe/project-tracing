@@ -1,0 +1,100 @@
+{
+  "title": "tracing.config",
+  "description": "Project tracing configuration: constrains fields and allowed values for tracing.config.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "timeZone": {
+      "type": "string",
+      "description": "IANA timezone (e.g. Asia/Shanghai, America/New_York) or fixed offset (e.g. +08:00, UTC+8, -05:30). Omitted defaults to Asia/Shanghai (UTC+8)."
+    },
+    "language": {
+      "type": "string",
+      "enum": ["en-US", "zh-CN", "fr-FR", "ja-JP"],
+      "description": "Output language for the daily report markdown. Omitted defaults to en-US."
+    },
+    "targets": {
+      "type": "array",
+      "description": "List of tracing targets; executed in order.",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "strategy": {
+                "type": "string",
+                "const": "version",
+                "description": "Version subscription: GET the remote version and compare it to basicVersion."
+              },
+              "name": {
+                "type": "string",
+                "description": "Optional display name; included in the daily report."
+              },
+              "versionUrl": {
+                "type": "string",
+                "description": "URL of the version resource; must be reachable via GET."
+              },
+              "versionSource": {
+                "type": "string",
+                "enum": ["plain", "json"],
+                "description": "plain: response body is a plain-text version string; json: response is JSON and requires versionField."
+              },
+              "versionField": {
+                "type": "string",
+                "description": "Required when versionSource is json. Dot paths and array indices are supported, e.g. package.version, a.b[0].c, items[1].tag."
+              },
+              "basicVersion": {
+                "type": "string",
+                "description": "Baseline version in npm-like form (optional v prefix or -beta suffix; comparison normalizes per project rules)."
+              }
+            },
+            "required": ["strategy", "versionUrl", "versionSource", "basicVersion"],
+            "allOf": [
+              {
+                "if": {
+                  "properties": { "versionSource": { "const": "json" } },
+                  "required": ["versionSource"]
+                },
+                "then": { "required": ["versionField"] }
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "strategy": {
+                "type": "string",
+                "const": "git",
+                "description": "Git tracing: new commits on the given branch after basicCommit."
+              },
+              "name": {
+                "type": "string",
+                "description": "Optional display name."
+              },
+              "repoUrl": {
+                "type": "string",
+                "description": "Remote repository clone URL (https or git)."
+              },
+              "branch": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Branch to track."
+              },
+              "basicCommit": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Baseline commit (full or short SHA); commits after this are treated as updates."
+              }
+            },
+            "required": ["strategy", "repoUrl", "branch", "basicCommit"]
+          }
+        ]
+      },
+      "minItems": 0
+    }
+  },
+  "required": ["targets"]
+}

@@ -1,0 +1,46 @@
+{
+  "report.titlePrefix": "日次トラッキングレポート",
+  "heading.overview": "概要",
+  "heading.details": "詳細",
+  "text.noTargets": "トラッキング対象なし",
+
+  "table.item": "項目",
+  "table.content": "内容",
+
+  "labels.generatedTime": "生成日時",
+  "labels.timeZone": "タイムゾーン",
+  "labels.entryCount": "項目数",
+
+  "labels.strategy": "戦略",
+
+  "common.yes": "はい",
+  "common.no": "いいえ",
+  "labels.error": "エラー",
+
+  "strategy.versionSubscription": "バージョン購読",
+  "version.subscriptionUrl": "購読URL",
+  "version.baselineVersion": "基準バージョン",
+  "version.remoteVersion": "リモートバージョン",
+  "version.compareResult": "比較結果",
+  "version.updateHigher": "更新あり（基準より高い）",
+  "version.compare.higher": "基準より高い",
+  "version.compare.lower": "基準より低い",
+  "version.compare.same": "基準と同じ",
+  "title.versionTracking": "バージョントラッキング",
+  "title.versionWithNameSuffix": "（バージョン）",
+
+  "strategy.gitTracking": "Git追跡",
+  "git.repo": "リポジトリ",
+  "git.branch": "ブランチ",
+  "git.baselineCommit": "基準コミット",
+  "git.currentHead": "現在のHEAD",
+  "git.hasNewCommits": "新しいコミットあり",
+  "git.newCommitsCount": "新規コミット数",
+  "git.commitListTitle": "コミット一覧",
+
+  "title.gitTracking": "Git追跡",
+  "title.gitWithNameSuffix": "（Git）",
+
+  "table.hash": "Hash",
+  "table.description": "説明"
+}

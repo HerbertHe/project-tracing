@@ -1,0 +1,46 @@
+{
+  "report.titlePrefix": "追踪日报",
+  "heading.overview": "概要",
+  "heading.details": "结果明细",
+  "text.noTargets": "（无追踪目标）",
+
+  "table.item": "项目",
+  "table.content": "内容",
+
+  "labels.generatedTime": "生成时间",
+  "labels.timeZone": "时区",
+  "labels.entryCount": "条目数",
+
+  "labels.strategy": "策略",
+
+  "common.yes": "是",
+  "common.no": "否",
+  "labels.error": "错误",
+
+  "strategy.versionSubscription": "版本订阅",
+  "version.subscriptionUrl": "订阅 URL",
+  "version.baselineVersion": "基准版本",
+  "version.remoteVersion": "远端版本",
+  "version.compareResult": "比较结果",
+  "version.updateHigher": "是否有更新（高于基准）",
+  "version.compare.higher": "高于基准",
+  "version.compare.lower": "低于基准",
+  "version.compare.same": "与基准相同",
+  "title.versionTracking": "版本追踪",
+  "title.versionWithNameSuffix": "（版本）",
+
+  "strategy.gitTracking": "Git 追踪",
+  "git.repo": "仓库",
+  "git.branch": "分支",
+  "git.baselineCommit": "基准提交",
+  "git.currentHead": "当前 HEAD",
+  "git.hasNewCommits": "是否有新提交",
+  "git.newCommitsCount": "新提交条数",
+  "git.commitListTitle": "提交列表",
+
+  "title.gitTracking": "Git 追踪",
+  "title.gitWithNameSuffix": "（Git）",
+
+  "table.hash": "Hash",
+  "table.description": "说明"
+}
