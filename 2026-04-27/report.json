@@ -1,0 +1,27 @@
+{
+  "reportVersion": 1,
+  "generatedAt": {
+    "isoUtc": "2026-04-26T22:39:36.990Z",
+    "zoned": "2026-04-27 06:39:36 (Asia/Shanghai)"
+  },
+  "dateFolder": "2026-04-27",
+  "timeZone": {
+    "kind": "iana",
+    "id": "Asia/Shanghai"
+  },
+  "timeZoneLabel": "Asia/Shanghai",
+  "language": "zh-CN",
+  "entryCount": 1,
+  "entries": [
+    {
+      "kind": "version",
+      "name": "SkillHub Cli 更新追踪",
+      "versionUrl": "https://skillhub-1388575217.cos.ap-guangzhou.myqcloud.com/version.json",
+      "basicVersion": "2026.3.18",
+      "remoteRaw": "2026.3.18",
+      "remoteVersion": "2026.3.18",
+      "compareResult": "same",
+      "hasUpdate": false
+    }
+  ]
+}
