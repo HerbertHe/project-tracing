@@ -78,10 +78,9 @@ async function main(): Promise<void> {
     "",
   ].join("\n");
 
-  const outputDir = join(distDir, "project-tracing");
-  await mkdir(outputDir, { recursive: true });
-  await writeFile(join(outputDir, "feed.xml"), xml, "utf8");
-  console.log(`已写入 Atom Feed：${join(outputDir, "feed.xml")}`);
+  await mkdir(distDir, { recursive: true });
+  await writeFile(join(distDir, "feed.xml"), xml, "utf8");
+  console.log(`已写入 Atom Feed：${join(distDir, "feed.xml")}`);
 }
 
 main().catch((error) => {
