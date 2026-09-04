@@ -1,4 +1,4 @@
-# Daily tracing report → gh-pages (accumulates `dist/<yyyy-mm-dd>/` across runs).
+# Daily tracing report → gh-pages (keeps only the latest three calendar days).
 
 name: Daily trace to gh-pages
 
@@ -39,10 +39,61 @@ jobs:
       - name: Generate reports
         run: pnpm trace
 
+      - name: Check for updates
+        id: updates
+        shell: bash
+        run: |
+          report_file="$(find dist -mindepth 2 -maxdepth 2 -type f -name report.json -print -quit)"
+          if [[ -z "${report_file}" ]]; then
+            echo "没有找到本次生成的日报。"
+            exit 1
+          fi
+
+          updated_items="$(jq -r '[.entries[]? | select(.hasUpdate == true) | (.name // .repoUrl // .versionUrl)] | join("、")' "${report_file}")"
+          if [[ -n "${updated_items}" ]]; then
+            {
+              echo "has_updates=true"
+              echo "message<<DISCORD_MESSAGE"
+              echo "检测到以下项目有更新，需要重点关注跟进：${updated_items}。"
+              echo "DISCORD_MESSAGE"
+            } >> "${GITHUB_OUTPUT}"
+          else
+            echo "has_updates=false" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Restore reports from gh-pages
+        shell: bash
+        run: |
+          git fetch --no-tags origin gh-pages
+          mkdir -p .gh-pages-existing
+          git archive origin/gh-pages | tar -x -C .gh-pages-existing
+
+          current_day="$(find dist -mindepth 1 -maxdepth 1 -type d -name '????-??-??' -printf '%f\n' | sort | tail -n 1)"
+          if [[ -z "${current_day}" ]]; then
+            echo "没有找到本次生成的日期目录。"
+            exit 1
+          fi
+          cutoff_day="$(date -u -d "${current_day} - 2 days" +%F)"
+
+          while IFS= read -r day; do
+            [[ "${day}" < "${cutoff_day}" || "${day}" > "${current_day}" ]] && continue
+            cp -R ".gh-pages-existing/${day}" dist/
+          done < <(find .gh-pages-existing -mindepth 1 -maxdepth 1 -type d -name '????-??-??' -printf '%f\n' | sort)
+
+      - name: Generate Atom feed
+        run: pnpm feed
+
       - name: Deploy dist to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./dist
-          keep_files: true
+          keep_files: false
+
+      - name: Notify Discord
+        if: steps.updates.outputs.has_updates == 'true'
+        uses: HerbertHe/discord-action@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          message: ${{ steps.updates.outputs.message }}
