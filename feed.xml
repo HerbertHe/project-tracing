@@ -2,9 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
   <title>项目追踪日报</title>
   <id>https://ibert.me/project-tracing/</id>
-  <updated>2026-09-08T23:52:16.261Z</updated>
+  <updated>2026-09-09T23:51:09.399Z</updated>
   <link rel="self" href="https://ibert.me/project-tracing/feed.xml"/>
   <link rel="alternate" href="https://ibert.me/project-tracing/"/>
+  <entry>
+    <id>https://ibert.me/project-tracing/2026-09-10/report.md</id>
+    <title>项目追踪日报 2026-09-10</title>
+    <updated>2026-09-09T23:51:09.399Z</updated>
+    <link href="https://ibert.me/project-tracing/2026-09-10/report.md"/>
+    <summary type="text">检测到以下项目有更新，需要重点关注跟进：SkillHub Cli 更新追踪。</summary>
+    <content type="text">检测到以下项目有更新，需要重点关注跟进：SkillHub Cli 更新追踪。</content>
+  </entry>
   <entry>
     <id>https://ibert.me/project-tracing/2026-09-09/report.md</id>
     <title>项目追踪日报 2026-09-09</title>
@@ -18,14 +26,6 @@
     <title>项目追踪日报 2026-09-08</title>
     <updated>2026-09-08T00:00:41.461Z</updated>
     <link href="https://ibert.me/project-tracing/2026-09-08/report.md"/>
-    <summary type="text">检测到以下项目有更新，需要重点关注跟进：SkillHub Cli 更新追踪。</summary>
-    <content type="text">检测到以下项目有更新，需要重点关注跟进：SkillHub Cli 更新追踪。</content>
-  </entry>
-  <entry>
-    <id>https://ibert.me/project-tracing/2026-09-07/report.md</id>
-    <title>项目追踪日报 2026-09-07</title>
-    <updated>2026-09-06T23:31:56.624Z</updated>
-    <link href="https://ibert.me/project-tracing/2026-09-07/report.md"/>
     <summary type="text">检测到以下项目有更新，需要重点关注跟进：SkillHub Cli 更新追踪。</summary>
     <content type="text">检测到以下项目有更新，需要重点关注跟进：SkillHub Cli 更新追踪。</content>
   </entry>
