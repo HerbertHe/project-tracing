@@ -1,10 +1,10 @@
 {
   "reportVersion": 1,
   "generatedAt": {
-    "isoUtc": "2026-11-20T02:51:48.474Z",
-    "zoned": "2026-11-20 10:51:48 (Asia/Shanghai)"
+    "isoUtc": "2026-11-23T02:18:06.467Z",
+    "zoned": "2026-11-23 10:18:06 (Asia/Shanghai)"
   },
-  "dateFolder": "2026-11-20",
+  "dateFolder": "2026-11-23",
   "timeZone": {
     "kind": "iana",
     "id": "Asia/Shanghai"
